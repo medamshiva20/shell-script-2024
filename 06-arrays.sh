@@ -6,4 +6,4 @@ echo "First person:${PERSONS[0]}"
 
 echo "All persons: ${PERSONS[@]}"
 
-echo "Number of variables:${PERSONS[#]}"
+echo "Number of variables:${#PERSONS[@]}"
