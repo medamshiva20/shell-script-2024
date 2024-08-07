@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Here shell script execute the command inside $() take the output into DATE
+#Here shell script will execute the command inside $() and take the output into the variable called as 'DATE'
 DATE=$(date)
 
 echo "Hello,this script executed at timestamp: $DATE"
