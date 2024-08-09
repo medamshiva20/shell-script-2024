@@ -6,8 +6,8 @@ if [ $USERID -ne 0 ]
  then 
    echo "ERROR:: Please run this script with root access"
    exit 1
- else
-   echo "INFO: You are root user"
+#  else
+#    echo "INFO: You are root user"
 fi
 
-yum remove mysql -y
+yum remove mysqlll -y
