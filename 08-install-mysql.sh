@@ -10,4 +10,4 @@ if [ $USERID -ne 0 ]
    echo "INFO: You are root user"
 fi
 
-yum install mysql -y
+yum remove mysql -y
