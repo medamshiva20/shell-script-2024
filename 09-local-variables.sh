@@ -5,5 +5,5 @@ getNUM(){
      echo "$NUM - inside function"
 }
 
-echo "$NUM - outside function" #Here it will not call the variable(NUM) value because it is outside funcvtion only
+echo "$NUM - outside function" #Here it will not call the variable(NUM) value because it is outside function only
 getNUM 
