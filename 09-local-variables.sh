@@ -1,6 +1,6 @@
-#!/bin/bash 
+#!/bin/sh
 
 getNUM(){
-NUM=100
-echo "Number is:$NUM - inside function"
+     NUM=100 #local variable
+     echo "$NUM - inside function"
 }
