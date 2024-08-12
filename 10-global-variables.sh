@@ -3,7 +3,7 @@
 NUM=200
 getNUM(){
 
-    NUM=100 #local variables
+    #NUM=100 #local variables
     echo "$NUM -inside function"
 }
 
