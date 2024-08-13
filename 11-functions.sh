@@ -6,9 +6,9 @@ DATE=$(date +%F)
 SCRIPT_NAME=$0
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 
-R="\E[31m"
-G="\[32m"
-N="\[0m"
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
 # this function should validate the previous command and inform user it is success or failure
 VALIDATE(){
