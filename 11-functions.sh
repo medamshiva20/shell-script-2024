@@ -24,3 +24,5 @@ yum install mysql -y
 VALIDATE $?
 
 yum install postfix -y
+
+VALIDATE $?
