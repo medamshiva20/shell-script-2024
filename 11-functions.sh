@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DATE=$(date +%F:%H:%M:%S)
+
 USERID=$(id -u)
 
 #This function should validate previous command and inform user it is success or failure
