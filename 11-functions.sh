@@ -1,34 +1,40 @@
 #!/bin/bash
 
-DATE=$(date +%F-%H-%M-%S)
-SCRIPT_NAME=$0
-LOGFILE=/tmp/$SCRIPT_NAME/$DATE.log
+# our program goal is to install mysql
 
-#This function should validate previous command and inform user it is success or failure
+DATE=$(date +%F)
+SCRIPT_NAME=$0
+LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
+
+
+
+# this function should validate the previous command and inform user it is success or failure
 VALIDATE(){
-    #$1 -->It will recieve the argument
+    #$1 --> it will receive the argument1
     if [ $1 -ne 0 ]
-     then 
-      echo "$2 ... FAILURE"
-     else
-      echo "$2 ... SUCCESS"
+    then
+        echo -e "$2 ...  FAILURE"
+        exit 1
+    else
+        echo -e "$2 ...  SUCCESS"
     fi
 }
 
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ]
- then
-  echo "ERROR::Please run this script with root access"
- else
-  echo "INFO::You are root user"
+then
+    echo "ERROR:: Please run this script with root access"
+    exit 1
+# else
+#     echo "INFO:: You are root user"
 fi
 
-#it is our responsibility again to check installation is success or not 
+# it is our responsibility again to check installation is success or not
 yum install mysql -y &>>$LOGFILE
 
-VALIDATE $? "Installation of MySQL"
+VALIDATE $? "Installing MySQL"
 
-yum install postfix -y &>>$LOGFILE
+yum install posddtfix -y &>>$LOGFILE
 
-VALIDATE $? "Installation of postfix"
+VALIDATE $? "Installing postfix"
