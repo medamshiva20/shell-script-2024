@@ -1,8 +1,8 @@
 #!/bin/bash
 
-DATE=$(date +%F:%H:%M:%S)
-SCRIPTNAME=$0
-LOGFILE=/tmp/$SCRIPTNAME/$DATE.log
+DATE=$(date +%F-%H-%M-%S)
+SCRIPT_NAME=$0
+LOGFILE=/tmp/$SCRIPT_NAME/$DATE.log
 
 #This function should validate previous command and inform user it is success or failure
 VALIDATE(){
