@@ -1,6 +1,6 @@
 #!/bin/bash 
 
 for i in $@
- do 
+do 
    yum install $i -y
- done
+done
