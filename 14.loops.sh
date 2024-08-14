@@ -1,5 +1,11 @@
 #!/bin/bash 
 
+
+DATE= $(date +%F)
+SCRIPT_NAME=$0
+LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
+
+
 USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
@@ -9,12 +15,12 @@ if [ $USERID -ne 0 ]
  then 
    echo -e "$R ERROR:: Please run this script with root access $N"
 else
-   echo "$G INFO: You are root user $N"
+   echo -e "$G INFO: You are root user $N"
 fi
 
 for i in $@
 do 
-   yum install $i -y
+   yum install $i -y &>>$LOGFILE
 done
 
 #improvements
