@@ -1,12 +1,15 @@
 #!/bin/bash 
 
 USERID=$(id -u)
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
 if [ $USERID -ne 0 ]
  then 
-   echo "ERROR:: Please run this script with root access"
+   echo -e "$R ERROR:: Please run this script with root access $N"
 else
-   echo "INFO: You are root user"
+   echo "$G INFO: You are root user $N"
 fi
 
 for i in $@
