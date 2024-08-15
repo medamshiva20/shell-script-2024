@@ -32,7 +32,7 @@ fi
 for i in $@
 do 
    yum list installed $i &>>$LOGFILE
-   if [$? -ne 0 ]
+   if [ $? -ne 0 ]
     then
       echo "$i not installed, let's install it"
       yum install $i &>>$LOGFILE
