@@ -2,13 +2,24 @@
 
 
 DATE=$(date +%F)
+LOGSDIR=/home/centos/shellscript-logs
 SCRIPT_NAME=$0
-LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
+LOGFILE=$LOGSDIR/$SCRIPT_NAME-$DATE.log
 
+VALIDATE(){
+   if [ $1 -ne 0 ]
+    then 
+    echo "Installing ...$R FAILURE $N"
+    exit 1
+    else
+    echo "Installing ...$G SUCCESS $N"
+   fi
+}
 
 USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
+Y="\e[33m"
 N="\e[0m"
 
 if [ $USERID -ne 0 ]
@@ -20,7 +31,16 @@ fi
 
 for i in $@
 do 
-   yum install $i -y &>>$LOGFILE
+   yum list installed $i &>>$LOGFILE
+   if [$? -ne 0 ]
+    then
+      echo "$i not installed, let's install it"
+      yum install $i &>>$LOGFILE
+      VALIDATE $? 
+    else
+      echo "$Y $i already installed"
+   fi
+   #yum install $i -y &>>$LOGFILE
 done
 
 #improvements
