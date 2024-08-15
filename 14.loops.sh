@@ -9,10 +9,10 @@ LOGFILE=$LOGSDIR/$SCRIPT_NAME-$DATE.log
 VALIDATE(){
    if [ $1 -ne 0 ]
     then 
-    echo "Installing ...$R FAILURE $N"
+    echo -e "Installing ...$R FAILURE $N"
     exit 1
     else
-    echo "Installing ...$G SUCCESS $N"
+    echo -e "Installing ...$G SUCCESS $N"
    fi
 }
 
@@ -38,7 +38,7 @@ do
       yum install $i &>>$LOGFILE
       VALIDATE $? 
     else
-      echo "$Y $i already installed"
+      echo -e "$Y $i already installed"
    fi
    #yum install $i -y &>>$LOGFILE
 done
