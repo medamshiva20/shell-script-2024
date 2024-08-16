@@ -8,5 +8,5 @@
 
 for i in {git..maven..nfs-utils..nginx}
  do
-   echo $i
+   yum install $i -y
  done
