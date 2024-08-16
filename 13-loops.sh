@@ -6,7 +6,7 @@
 # echo 4
 # echo 5
 
-for i in {1..1000}
+for i in {git..maven..nfs-utils..nginx}
  do
    echo $i
  done

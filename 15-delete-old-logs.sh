@@ -7,7 +7,7 @@ LOGSDIR=/home/centos/shellscript-logs
 SCRIPT_NAME=$0
 LOGFILE=$LOGSDIR/$SCRIPT_NAME-$DATE.log
 
-echo "Script is executing at: $DATE"
+echo "Script is executing at: $DATE" &>>$LOGFILE
 
 while read line 
  do 
