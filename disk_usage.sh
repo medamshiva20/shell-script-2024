@@ -19,7 +19,7 @@ while read line
    usage=$(echo $line | awk {'print $6'} |cut -d % -f1)
    partion=$(echo $line | awk {'print $1'})
 
-   if [ $DISK_USAGE -gt $DISK_USAGE_THRESHOLD ]
+   if [ $usage -gt $DISK_USAGE_THRESHOLD ]
     then 
        message+="HIGH DISK USAGE ON $partition: $usage"
    fi 
